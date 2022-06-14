@@ -9,7 +9,12 @@ breads.get('/:arrayIndex', (req, res) => {
 
 // INDEX
 breads.get('/', (req,res) => {
-    res.send(Bread)
+    res.render ('index',
+    {
+        breads: Bread,
+        title: 'Index Page'
+    })
+    // res.send(Bread)
 })
 
 module.exports = breads 
