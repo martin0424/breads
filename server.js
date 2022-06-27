@@ -1,5 +1,5 @@
 // DEPENDENCIES
-const express = require('express');
+const methodOverride = require('method-override');
 
 // CONFIGURATION
 require('dotenv').config();
@@ -8,6 +8,7 @@ const app = express()
 
 // MIDDLEWARE
 app.use(express.urlencoded({extend: true}))
+app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
